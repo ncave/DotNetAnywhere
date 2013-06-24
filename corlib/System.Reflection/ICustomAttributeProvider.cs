@@ -21,19 +21,16 @@
 #if !LOCALTEST
 
 namespace System.Reflection {
-	public abstract class MemberInfo : ICustomAttributeProvider {
 
-		protected MemberInfo() {
-		}
+	public interface ICustomAttributeProvider {
 
-		public abstract string Name { get;}
+		bool IsDefined(Type attributeType, bool inherit);
 
-		public abstract bool IsDefined(Type attributeType, bool inherit);
+		Object[] GetCustomAttributes(bool inherit);
 
-		public abstract Object[] GetCustomAttributes(bool inherit);
-
-		public abstract Object[] GetCustomAttributes(Type attributeType, bool inherit);
+		Object[] GetCustomAttributes(Type attributeType, bool inherit);
 	}
+
 }
 
 #endif
