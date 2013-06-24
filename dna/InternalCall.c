@@ -106,6 +106,8 @@ static tInternalCall internalCalls[] = {
 	{NULL, NULL,          "get_IsGenericType", System_RuntimeType_get_IsGenericType, TYPE_SYSTEM_BOOLEAN, 0},
 	{NULL, NULL,          "Internal_GetGenericTypeDefinition", System_RuntimeType_Internal_GetGenericTypeDefinition, TYPE_SYSTEM_RUNTIMETYPE, 0},
 	{NULL, NULL,          "GetGenericArguments", System_RuntimeType_GetGenericArguments, TYPE_SYSTEM_ARRAY_TYPE, 0},
+	{NULL, NULL,          "IsDefined", System_RuntimeType_IsDefined, TYPE_SYSTEM_BOOLEAN, 2, {TYPE_SYSTEM_TYPE, TYPE_SYSTEM_BOOLEAN}},
+	{NULL, NULL,          "Internal_GetCustomAttributes", System_RuntimeType_GetCustomAttributes, TYPE_SYSTEM_ARRAY_OBJECT, 2, {TYPE_SYSTEM_TYPE, TYPE_SYSTEM_BOOLEAN}},
 
 	{NULL, "Char", "GetUnicodeCategory", System_Char_GetUnicodeCategory, TYPE_SYSTEM_GLOBALIZATION_UNICODECATEGORY, 1, {TYPE_SYSTEM_CHAR}},
 	{NULL, NULL  , "ToLowerInvariant", System_Char_ToLowerInvariant, TYPE_SYSTEM_CHAR, 1, {TYPE_SYSTEM_CHAR}},

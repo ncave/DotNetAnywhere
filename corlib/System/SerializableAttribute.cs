@@ -20,20 +20,12 @@
 
 #if !LOCALTEST
 
-namespace System.Reflection {
-	public abstract class MemberInfo : ICustomAttributeProvider {
+namespace System {
 
-		protected MemberInfo() {
-		}
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Delegate, Inherited = false)]
+    public sealed class SerializableAttribute : Attribute {
+    }
 
-		public abstract string Name { get;}
-
-		public abstract bool IsDefined(Type attributeType, bool inherit);
-
-		public abstract Object[] GetCustomAttributes(bool inherit);
-
-		public abstract Object[] GetCustomAttributes(Type attributeType, bool inherit);
-	}
 }
 
 #endif

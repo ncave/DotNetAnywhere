@@ -20,19 +20,28 @@
 
 #if !LOCALTEST
 
-namespace System.Reflection {
-	public abstract class MemberInfo : ICustomAttributeProvider {
+namespace System.Runtime.InteropServices {
 
-		protected MemberInfo() {
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct, Inherited = false)]
+	public sealed class StructLayoutAttribute : Attribute {
+
+		private readonly LayoutKind _value;
+
+		public LayoutKind Value { get { return _value; } }
+
+		public int Pack;
+
+		public int Size;
+
+		public CharSet CharSet;
+
+		public StructLayoutAttribute(LayoutKind layoutKind) {
+			_value = layoutKind;
 		}
 
-		public abstract string Name { get;}
-
-		public abstract bool IsDefined(Type attributeType, bool inherit);
-
-		public abstract Object[] GetCustomAttributes(bool inherit);
-
-		public abstract Object[] GetCustomAttributes(Type attributeType, bool inherit);
+		public StructLayoutAttribute(short layoutKind) {
+			_value = (LayoutKind)layoutKind;
+		}
 	}
 }
 

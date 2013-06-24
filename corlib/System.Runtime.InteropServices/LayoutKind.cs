@@ -20,19 +20,12 @@
 
 #if !LOCALTEST
 
-namespace System.Reflection {
-	public abstract class MemberInfo : ICustomAttributeProvider {
-
-		protected MemberInfo() {
-		}
-
-		public abstract string Name { get;}
-
-		public abstract bool IsDefined(Type attributeType, bool inherit);
-
-		public abstract Object[] GetCustomAttributes(bool inherit);
-
-		public abstract Object[] GetCustomAttributes(Type attributeType, bool inherit);
+namespace System.Runtime.InteropServices {
+	[Serializable]
+	public enum LayoutKind {
+		Sequential = 0,
+		Explicit = 2,
+		Auto = 3
 	}
 }
 
