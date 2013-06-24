@@ -21,12 +21,27 @@
 #if !LOCALTEST
 
 namespace System.Runtime.InteropServices {
-	[Serializable]
-	public enum CharSet {
-		None = 1,
-		Ansi = 2,
-		Unicode = 3,
-		Auto = 4,
+
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct, Inherited = false)]
+	public sealed class StructLayoutAttribute : Attribute {
+
+		private readonly LayoutKind _value;
+
+		public LayoutKind Value { get { return _value; } }
+
+		public int Pack;
+
+		public int Size;
+
+		public CharSet CharSet;
+
+		public StructLayoutAttribute(LayoutKind layoutKind) {
+			_value = layoutKind;
+		}
+
+		public StructLayoutAttribute(short layoutKind) {
+			_value = (LayoutKind)layoutKind;
+		}
 	}
 }
 

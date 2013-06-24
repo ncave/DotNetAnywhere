@@ -20,14 +20,12 @@
 
 #if !LOCALTEST
 
-namespace System.Runtime.InteropServices {
-	[Serializable]
-	public enum CharSet {
-		None = 1,
-		Ansi = 2,
-		Unicode = 3,
-		Auto = 4,
-	}
+namespace System {
+
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Delegate, Inherited = false)]
+    public sealed class SerializableAttribute : Attribute {
+    }
+
 }
 
 #endif

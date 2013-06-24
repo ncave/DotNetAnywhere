@@ -22,11 +22,10 @@
 
 namespace System.Runtime.InteropServices {
 	[Serializable]
-	public enum CharSet {
-		None = 1,
-		Ansi = 2,
-		Unicode = 3,
-		Auto = 4,
+	public enum LayoutKind {
+		Sequential = 0,
+		Explicit = 2,
+		Auto = 3
 	}
 }
 
