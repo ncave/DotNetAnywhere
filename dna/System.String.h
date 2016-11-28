@@ -25,6 +25,7 @@
 #include "Types.h"
 
 tAsyncCall* System_String_ctor_CharInt32(PTR pThis_, PTR pParams, PTR pReturnValue);
+tAsyncCall* System_String_ctor_CharA(PTR pThis_, PTR pParams, PTR pReturnValue);
 tAsyncCall* System_String_ctor_CharAIntInt(PTR pThis_, PTR pParams, PTR pReturnValue);
 tAsyncCall* System_String_ctor_StringIntInt(PTR pThis_, PTR pParams, PTR pReturnValue);
 tAsyncCall* System_String_get_Chars(PTR pThis_, PTR pParams, PTR pReturnValue);

@@ -68,7 +68,8 @@ static tInternalCall internalCalls[] = {
 	{NULL,      NULL,    "GetHashCode", System_Object_GetHashCode, TYPE_SYSTEM_INT32, 0},
 	{NULL,      NULL,    "GetType", System_Object_GetType, TYPE_SYSTEM_TYPE, 0},
 
-	{NULL, "String", ".ctor", System_String_ctor_CharInt32, TYPE_SYSTEM_VOID, 2, {TYPE_SYSTEM_CHAR, TYPE_SYSTEM_INT32}},
+	{NULL, "String", ".ctor", System_String_ctor_CharInt32, TYPE_SYSTEM_VOID, 2, { TYPE_SYSTEM_CHAR, TYPE_SYSTEM_INT32 } },
+	{NULL, NULL,	 ".ctor", System_String_ctor_CharA, TYPE_SYSTEM_VOID, 1, { TYPE_SYSTEM_ARRAY_CHAR } },
 	{NULL, NULL,     ".ctor", System_String_ctor_CharAIntInt, TYPE_SYSTEM_VOID, 3, {TYPE_SYSTEM_ARRAY_CHAR, TYPE_SYSTEM_INT32, TYPE_SYSTEM_INT32}},
 	{NULL, NULL,     ".ctor", System_String_ctor_StringIntInt, TYPE_SYSTEM_VOID, 3, {TYPE_SYSTEM_STRING, TYPE_SYSTEM_INT32, TYPE_SYSTEM_INT32}},
 	{NULL, NULL,     "get_Chars", System_String_get_Chars, TYPE_SYSTEM_CHAR, 1, {TYPE_SYSTEM_INT32}},
@@ -130,7 +131,9 @@ static tInternalCall internalCalls[] = {
 	{NULL, NULL,   "Cos", System_Math_Cos, TYPE_SYSTEM_DOUBLE, 1, {TYPE_SYSTEM_DOUBLE}},
 	{NULL, NULL,   "Tan", System_Math_Tan, TYPE_SYSTEM_DOUBLE, 1, {TYPE_SYSTEM_DOUBLE}},
 	{NULL, NULL,   "Pow", System_Math_Pow, TYPE_SYSTEM_DOUBLE, 2, {TYPE_SYSTEM_DOUBLE, TYPE_SYSTEM_DOUBLE}},
-	{NULL, NULL,   "Sqrt", System_Math_Sqrt, TYPE_SYSTEM_DOUBLE, 1, {TYPE_SYSTEM_DOUBLE}},
+	{ NULL, NULL, "Sqrt", System_Math_Sqrt, TYPE_SYSTEM_DOUBLE, 1, { TYPE_SYSTEM_DOUBLE } },
+	{ NULL, NULL, "Ceiling", System_Math_Ceiling, TYPE_SYSTEM_DOUBLE, 1, { TYPE_SYSTEM_DOUBLE } },
+	{ NULL, NULL, "Floor", System_Math_Floor, TYPE_SYSTEM_DOUBLE, 1, { TYPE_SYSTEM_DOUBLE } },
 
 	{"System.Threading", "Thread", ".ctor", System_Threading_Thread_ctor, TYPE_SYSTEM_VOID, 1, {TYPE_SYSTEM_THREADING_THREADSTART}},
 	{NULL,               NULL,     ".ctor", System_Threading_Thread_ctorParam, TYPE_SYSTEM_VOID, 1, {TYPE_SYSTEM_THREADING_PARAMETERIZEDTHREADSTART}},

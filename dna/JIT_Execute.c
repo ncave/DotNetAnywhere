@@ -463,6 +463,11 @@ U32 JIT_Execute(tThread *pThread, U32 numInst) {
 		GET_LABELS(JIT_BLE_UN_I32I32);
 		GET_LABELS(JIT_BLT_UN_I32I32);
 
+		GET_LABELS(JIT_BGE_UN_I64I64);
+		GET_LABELS(JIT_BGT_UN_I64I64);
+		GET_LABELS(JIT_BLE_UN_I64I64);
+		GET_LABELS(JIT_BLT_UN_I64I64);
+
 		GET_LABELS_DYNAMIC(JIT_SHL_I32, 0);
 		GET_LABELS_DYNAMIC(JIT_SHR_I32, 0);
 		GET_LABELS_DYNAMIC(JIT_SHR_UN_I32, 0);
@@ -1648,6 +1653,60 @@ JIT_BLT_UN_I32I32_start:
 	}
 JIT_BLT_UN_I32I32_end:
 	GO_NEXT_CHECK();
+
+
+JIT_BGE_UN_I64I64_start:
+	OPCODE_USE(JIT_BGE_UN_I64I64);
+	{
+		U64 v1, v2, ofs;
+		POP_U64_U64(v1, v2);
+		ofs = GET_OP();
+		if (v1 >= v2) {
+			pCurOp = pOps + ofs;
+		}
+	}
+JIT_BGE_UN_I64I64_end:
+	GO_NEXT_CHECK();
+
+JIT_BGT_UN_I64I64_start:
+	OPCODE_USE(JIT_BGT_UN_I64I64);
+	{
+		U64 v1, v2, ofs;
+		POP_U64_U64(v1, v2);
+		ofs = GET_OP();
+		if (v1 > v2) {
+			pCurOp = pOps + ofs;
+		}
+	}
+JIT_BGT_UN_I64I64_end:
+	GO_NEXT_CHECK();
+
+JIT_BLE_UN_I64I64_start:
+	OPCODE_USE(JIT_BLE_UN_I64I64);
+	{
+		U64 v1, v2, ofs;
+		POP_U64_U64(v1, v2);
+		ofs = GET_OP();
+		if (v1 <= v2) {
+			pCurOp = pOps + ofs;
+		}
+	}
+JIT_BLE_UN_I64I64_end:
+	GO_NEXT_CHECK();
+
+JIT_BLT_UN_I64I64_start:
+	OPCODE_USE(JIT_BLT_UN_I64I64);
+	{
+		U64 v1, v2, ofs;
+		POP_U64_U64(v1, v2);
+		ofs = GET_OP();
+		if (v1 < v2) {
+			pCurOp = pOps + ofs;
+		}
+	}
+JIT_BLT_UN_I64I64_end:
+	GO_NEXT_CHECK();
+
 
 JIT_CEQ_I32I32_start: // Handles I32 and O
 	OPCODE_USE(JIT_CEQ_I32I32);

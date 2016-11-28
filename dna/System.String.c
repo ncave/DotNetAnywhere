@@ -65,6 +65,22 @@ tAsyncCall* System_String_ctor_CharInt32(PTR pThis_, PTR pParams, PTR pReturnVal
 	return NULL;
 }
 
+tAsyncCall* System_String_ctor_CharA(PTR pThis_, PTR pParams, PTR pReturnValue) {
+	tSystemString *pSystemString;
+	HEAP_PTR charArray;
+	PTR charElements;
+	U32 startIndex = 0, length = SystemArray_GetLength(((HEAP_PTR*)pParams)[0]);
+
+	charArray = ((HEAP_PTR*)pParams)[0];
+
+	charElements = SystemArray_GetElements(charArray);
+	pSystemString = CreateStringHeapObj(length);
+	memcpy(pSystemString->chars, charElements + (startIndex << 1), length << 1);
+	*(HEAP_PTR*)pReturnValue = (HEAP_PTR)pSystemString;
+
+	return NULL;
+}
+
 tAsyncCall* System_String_ctor_CharAIntInt(PTR pThis_, PTR pParams, PTR pReturnValue) {
 	tSystemString *pSystemString;
 	HEAP_PTR charArray;
