@@ -328,6 +328,14 @@ namespace System {
 			return output;
 		}
 
+        public static void Sort<T>(T[] array)
+	    {
+	    }
+
+        public static void Sort<TKey, TValue>(TKey[] keys, TValue[] items, IComparer<TKey> comparer)
+        {
+        }
+
 
 		#region Interface Members
 
