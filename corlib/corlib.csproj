@@ -135,6 +135,7 @@
     <Compile Include="System.IO\StreamReader.cs" />
     <Compile Include="System.IO\TextReader.cs" />
     <Compile Include="System.Reflection\DefaultMemberAttribute.cs" />
+    <Compile Include="System.Reflection\ICustomAttributeProvider.cs" />
     <Compile Include="System.Reflection\MemberInfo.cs" />
     <Compile Include="System.Runtime.CompilerServices\IndexerNameAttribute.cs" />
     <Compile Include="System.Runtime.CompilerServices\MethodImplAttribute.cs" />
@@ -145,7 +146,9 @@
     <Compile Include="System.Runtime.InteropServices\DllImportAttribute.cs" />
     <Compile Include="System.Runtime.InteropServices\ExternalException.cs" />
     <Compile Include="System.Runtime.InteropServices\InAttribute.cs" />
+    <Compile Include="System.Runtime.InteropServices\LayoutKind.cs" />
     <Compile Include="System.Runtime.InteropServices\OutAttribute.cs" />
+    <Compile Include="System.Runtime.InteropServices\StructLayoutAttribute.cs" />
     <Compile Include="System.Text\Decoder.cs" />
     <Compile Include="System.Text\Encoding.cs" />
     <Compile Include="System.Text\UnicodeEncoding.cs" />
@@ -229,6 +232,7 @@
     <Compile Include="System\RuntimeType.cs" />
     <Compile Include="System\RuntimeTypeHandle.cs" />
     <Compile Include="System\SByte.cs" />
+    <Compile Include="System\SerializableAttribute.cs" />
     <Compile Include="System\Single.cs" />
     <Compile Include="System\String.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
