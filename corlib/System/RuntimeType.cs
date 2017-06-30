@@ -112,6 +112,10 @@ namespace System {
 
 		[MethodImpl(MethodImplOptions.InternalCall)]
 		extern private Object[] Internal_GetCustomAttributes(Type attributeType, bool inherit);
+
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		extern public override Type GetElementType();
+
 	}
 
 }

@@ -328,14 +328,16 @@ namespace System {
 			return output;
 		}
 
-        public static void Sort<T>(T[] array)
-	    {
-	    }
+		public static void Sort<T>(T[] array)
+		{
+		}
 
-        public static void Sort<TKey, TValue>(TKey[] keys, TValue[] items, IComparer<TKey> comparer)
-        {
-        }
+		public static void Sort<TKey, TValue>(TKey[] keys, TValue[] items, IComparer<TKey> comparer)
+		{
+		}
 
+		[MethodImpl(MethodImplOptions.InternalCall)]
+		extern public static Array CreateInstance(Type elementType, int length);
 
 		#region Interface Members
 
